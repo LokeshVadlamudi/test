@@ -37,12 +37,12 @@ def test_addMixVeg(riceBowl):
 #pass test case - passing c to add chicken and expecting the output as chicken
 def test_addMeatType(riceBowl):
     riceBowl.addMeatType("c")
-    assert riceBowl.mixVeg == "chicken"
+    assert riceBowl.meatType == "chicken"
 
 #pass test case - passing b to add beef and expecting the output as beef
 def test_addMeatType(riceBowl):
     riceBowl.addMeatType("b")
-    assert riceBowl.mixVeg == "beef"
+    assert riceBowl.meatType == "beef"
 
 
 

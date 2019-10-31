@@ -1,4 +1,4 @@
-# Rice Bowl python program
+# Rice Bowl Python Program
 
 adds various ingredients to the rice bowl object and prints the attributes.
 

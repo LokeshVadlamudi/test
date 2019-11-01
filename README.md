@@ -16,6 +16,9 @@ Steps to run the interactive python file:
 Requirements :
 **** inquirer and pprint packages
 
+--pip install inquirer
+
+--pip install pprint
 
 
 

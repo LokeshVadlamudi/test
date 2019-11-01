@@ -13,7 +13,10 @@ Steps to run the interactive python file:
 
 **step 4 :type--- python RiceBowl.py
 
-Requirements :
+
+
+**** Requirements :
+
 **** inquirer and pprint packages
 
 --pip install inquirer

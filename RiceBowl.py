@@ -1,3 +1,4 @@
+import inquirer #for getting user input through interactive method.
 #  Rice bowl class
 class RiceBowl:
     def addRiceType(self,ricetype):
@@ -19,55 +20,32 @@ class RiceBowl:
         self.Guacamole = guacamole
 
 #code for user input
-#inquirer
-import inquirer
-
 def userInput(a,b):
-    choices = [
-        inquirer.List('option',
-                      message=b,
-                      choices=a,
-                      ),
-    ]
-    answers = inquirer.prompt(choices)
-    return (answers["option"])
+    choices = [inquirer.List('option',choices = a,message = b)]
+    answer = inquirer.prompt(choices)
+    return answer["option"]
 
 #creating the object
 rb = RiceBowl()
 
-#getting the rice type from the user
-a1 = userInput(["white", "brown"],"select type of rice:")
-rb.addRiceType(a1)
+#adding the rice choice
+rb.addRiceType(userInput(["white", "brown"],"select type of rice:"))
 
-#adding mix veg choice from the user
-a1 = userInput(["add","skip"],"want to add mix veg?")
-rb.addMixVeg(a1)
+#adding mix veg choice
+rb.addMixVeg(userInput(["add","skip"],"want to add mix veg?"))
 
 #adding meat choice
-a1 = userInput(["chicken","beef"],"select type of meat:")
-rb.addMeatType(a1)
+rb.addMeatType(userInput(["chicken","beef"],"select type of meat:"))
 
 #adding sauce choice
-a1 = userInput(["spicy","sweet"],"select type of sauce:")
-rb.addSauceType(a1)
+rb.addSauceType(userInput(["spicy","sweet"],"select type of sauce:"))
 
-#adding sour cream choice from the user
-a1 = userInput(["add","skip"],"want to add sour cream?")
-rb.addSourCream(a1)
+#adding sour cream choice
+rb.addSourCream(userInput(["add","skip"],"want to add sour cream?"))
 
-#adding guacamole choice from the user
-a1 = userInput(["add","skip"],"want to add guacamole?")
-rb.addGuacamole(a1)
+#adding guacamole choice
+rb.addGuacamole(userInput(["add","skip"],"want to add guacamole?"))
 
 #printing the ricebowl ingredients :
-
 from pprint import pprint
 pprint(vars(rb))
-
-
-
-
-
-
-
-

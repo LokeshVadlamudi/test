@@ -45,11 +45,3 @@ for i,j in zip(a,res):
 #printing the ricebowl ingredients :
 from pprint import pprint
 pprint(vars(rb))
-
-
-
-
-
-
-
-

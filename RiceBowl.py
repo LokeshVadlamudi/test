@@ -4,18 +4,35 @@ class RiceBowl:
         self.ingredients = ings
     def show(self):
         print(self.ingredients)
-rb = RiceBowl()
-a = [["white", "brown"],["add","skip"],["chicken","beef"],["spicy","sweet"],["add","skip"],["add","skip"]]
-b = ["rice","mix veg","meat","sauce","sour cream","guacamole"]
-d = {}
-for option,question in zip(a,b):
-    choices = [inquirer.List('chose',choices = option,message = question)]
+
+#model function for getting choice from the user
+def askUser(option,question):
+    choices = [inquirer.List('selected', choices=option, message=question)]
     answer = inquirer.prompt(choices)
-    d[question] = (answer["chose"])
-rb.addIngredients(d)
+    return answer["selected"]
+
+def selecting(a,b,d):
+    #asking user about the ingredients for first time
+    for i,j in zip(a[:-1],b[:-2]):
+        d[j] = askUser(i,j)
+
+    #asking the user for confirmation
+    c = askUser(a[-1],b[-2])
+
+    #if not confirm, we get the changes from the user.
+    while c is not a[-1][0]:
+        f = askUser(b[:-2], b[-1])
+        d[f] = askUser(a[b.index(f)],f)
+        c = askUser(a[-1], b[-2])
+    return d
+
+a = [["white", "brown"],["add","skip"],["chicken","beef"],["spicy","sweet"],["add","skip"],["add","skip"],["confirm","edit"]]
+b = ["rice","mix veg","meat","sauce","sour cream","guacamole","want any change?","which one?"]
+
+#instance of ricebowl class
+rb = RiceBowl()
+rb.addIngredients(selecting(a,b,d={}))
 rb.show()
-
-
 
 
 

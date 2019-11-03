@@ -36,5 +36,5 @@ b = ["rice","mix veg","meat","sauce","sour cream","guacamole","want any change?"
 
 #instance of ricebowl class
 rb = RiceBowl()
-rb.addIngredients(selecting(a,b,d={}))
+rb.addIngredients(selecting(a,b))
 rb.show()

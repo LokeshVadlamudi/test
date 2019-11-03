@@ -23,9 +23,11 @@ def selecting(a,b,d={}):
 
     #if not confirm, we get the changes from the user.
     while c is not a[-1][0]:
+        # we show the items selected if user selects the review option 
         if c is a[-1][2]:
             print("{} \n".format(chalk.yellowBright(d)))
         else:
+         #we allow user to edit the ingredient that he/she wishes to edit
             f = askUser(b[:-2], b[-1])
             d[f] = askUser(a[b.index(f)],f)
         c = askUser(a[-1], b[-2])

@@ -13,7 +13,7 @@ def askUser(option,question):
     answer = inquirer.prompt(choices)
     return answer["selected"]
 
-def selecting(a,b,d):
+def selecting(a,b,d={}):
     #asking user about the ingredients for first time
     for i,j in zip(a[:-1],b[:-2]):
         d[j] = askUser(i,j)
